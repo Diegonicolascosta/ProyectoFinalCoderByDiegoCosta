@@ -1,0 +1,126 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+}
+/*Styling body */
+
+body {       
+    width: 95% ;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    background-color: lightgray ;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+    font-family: 'IBM Plex Mono', monospace;
+}
+/* Title and header */
+
+.containerTitle {   
+    display: flex;
+    border: 1px;
+    border-bottom-style: solid;  
+    border-color: black;
+    
+     
+}
+.cornerLeft {
+    border-right: 1px;
+    border-color: black;
+    border-right-style: solid;
+    background-color: bisque;
+    height: 50px;
+    width: 70px;
+}
+.cornerRigth {   
+    border-left: 1px;
+    border-color: black;
+    border-left-style: solid;     
+    background-color: bisque;
+    height: 50px;
+    width: 70px;
+}
+header {     
+    background-color: lightskyblue;    
+    height: 50px ;
+  }
+
+  h1 {
+    margin: auto;
+    text-align: center;
+    font-size: 2.25rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    
+  }
+
+/* Navegation and searchBar */
+
+.containerNav {      
+    border: 1px;
+    border-bottom-style: solid;    
+    display: flex;
+    height: 70px;
+}
+.menu {
+    flex-direction: row;
+    width: 50%;     
+    border: 1px;
+    border-right-style: solid;
+    
+}
+
+nav ul li {          
+    background-color: darkslategray;
+    border: 1px;
+    border-style: solid;  
+    padding: 5px;   
+    float: left;
+    list-style: none;
+    margin-right: 10px;
+  }
+
+.containerSearcher { 
+    flex-direction: row; 
+    width: 50%;
+    
+}
+
+#searchInput {
+    margin-top: 20px;
+    margin-left: 5px;
+    width: 80%;
+    height: 30px;
+
+}
+  /* Tabla central y activos */
+
+.valores {    
+    border: 1px;
+    border-style: solid; 
+    border-left-style: none;
+    border-top-style: none;
+    height: 250px;
+    
+      
+    
+  }
+  .containerFotos {
+    border: 1px;
+    border-bottom-style: solid;
+    height: 200px;
+    
+  }
+
+  footer {
+    margin-top: 10px;
+    height: 40px;
+    
+  }
+    
