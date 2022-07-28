@@ -1,7 +1,7 @@
 // Calculador de interes compuesto y gestion de riesgo
 
 
-let iCompuesto = (k, interes, periodo) =>{                  // funcion interes compuesto
+const iCompuesto = (k, interes, periodo) =>{                  // funcion interes compuesto
 
     let nombreUsuario = prompt("Ingrese su nombre", "nombre");
     let apellidoUsuario = prompt("ingrese su apellido", "apellido");
@@ -19,7 +19,7 @@ let iCompuesto = (k, interes, periodo) =>{                  // funcion interes c
 }
 
 
-let gRiesgo = (capitalR, pRiesgo) => {                       // funcion gestion del riesgo
+const gRiesgo = (capitalR, pRiesgo) => {                       // funcion gestion del riesgo
 
     capitalR = +prompt("Capital a gestionar");
     pRiesgo = +prompt("porcentaje del 1 al 3%");   
