@@ -1,5 +1,5 @@
 
-function comenzar(){
+function crearPerfil(){                                                        // funcion  para crear y  normalizar el perfil del usuario
 
 class PerfilCartera {
     constructor() {
@@ -19,7 +19,7 @@ class PerfilCartera {
             this.tipoPerfil = this.tipoPerfil.toLocaleUpperCase()
             switch (this.tipoPerfil){
                 case "C":                    
-                    this.carteras.push("Rv 10%", "Rf 80%", "L10%")                   // esto estaria mal entonces? (¿como tomaria resultado desde afuera?)
+                    this.carteras.push("Rv 10%", "Rf 80%", "L10%")                   
                     break;
                 case "M":                    
                     this.carteras.push("Rv 20%", "Rf 60%", "L10%")
@@ -30,50 +30,81 @@ class PerfilCartera {
                     default:
                 
             }
-
-            
-
         }
-           
-
-        }           
             
-        //const carteras = []      
-        const perfiles =[]
+    }
+        
+        const perfiles =[]         
         let accion = "";
+        let accion1 ="";
 
-        accion = prompt("elija una opción: (CREAR/MOSTRAR/SALIR)", "CREAR/MOSTRAR/SALIR")
-        while (accion != "SALIR") {            
-            if(accion == "CREAR") {
+        accion = prompt("Elija una opción: (CREAR/MOSTRAR/BUSCAR/SALIR)", "CREAR/MOSTRAR/BUSCAR/SALIR")      // Menu opciones 
+        accion1 = accion.toUpperCase()        
+            if(accion1 == "SALIR"){
+                console.log("Fin simulación. Gracias!")
+                }
+        while (accion1 != "SALIR") {    
+                             
+            if(accion1 == "CREAR") {
                 const perfil = new PerfilCartera()
-                perfil.nombre = prompt("ingrese nombre:")
+                perfil.nombre = prompt("ingrese nombre:")       
                 perfil.apellido = prompt("ingrese apellido:")
                 perfil.tipoPerfil = prompt("Tipo de perfil: C / M / A")
-                perfil.monto = parseFloat(prompt("ingrese monto"))
-                perfiles.push(perfil)
-                perfil.normalizar()  
-                //perfiles.forEach((el)=>{console.log(el)})           
-                //console.log(perfiles)           
-                accion = prompt("elija una opción:(CREAR/MOSTRAR/SALIR)", "CREAR/MOSTRAR/SALIR" )
-                
+                perfil.monto = parseFloat(prompt("ingrese monto"))  
+                              
+                const tP = perfiles.some((el) => {                                              // validar repeticion de usuario
+                    return  el.nombre == perfil.nombre})  
 
-            } 
-            else if (accion == "MOSTRAR"){     
-                                    
-                perfiles.forEach((el)=>{console.log(el)}) 
-                
-                //console.log(perfiles)                
-                accion = prompt("elija una opción:(CREAR/MOSTRAR/SALIR)", "CREAR/MOSTRAR/SALIR" )
-                    
-                    
+                    if (tP == true){
+                        console.log("El usuario ya existe, intente nuevamente")
+                      }                  
+                                       
+                perfil.normalizar()  
+                perfiles.push(perfil)                                                    
+                        
+                accion = prompt("Elija una opción:(CREAR/MOSTRAR/BUSCAR/SALIR)", "CREAR/MOSTRAR/BUSCAR/SALIR")
+                accion1 = accion.toUpperCase()
+                if(accion1 == "SALIR"){
+                    console.log("Fin simulación. Gracias!")
+                      }     
+              }
+
+             
+            else if (accion1 == "MOSTRAR"){ 
+                perfiles.forEach((el)=>{console.log(el)})                                                               // mostrar todos lo objetos de perfiles[]
+                accion = prompt("Elija una opción:(CREAR/MOSTRAR/BUSCAR/SALIR)", "CREAR/MOSTRAR/BUSCAR/SALIR" )
+                accion1 = accion.toUpperCase()
+                if(accion == "SALIR"){
+                    console.log("Fin simulación. Gracias!")
+                      }    
+           
+             }  else if (accion1 == "BUSCAR"){
+                const busqueda = prompt("Indique el nombre de la persona a buscar")
+                const busqueda1 = busqueda.toUpperCase()  
+                const objetoBuscado = perfiles.find((el)=>{
+                    return el.nombre == busqueda1}) 
+
+                console.log(objetoBuscado)
+                accion = prompt("Elija una opción:(CREAR/MOSTRAR/BUSCAR/SALIR)", "CREAR/MOSTRAR/BUSCAR/SALIR" )     // busqueda de usuario
+                accion1 = accion.toUpperCase()
+                if(accion1 == "SALIR"){
+                    console.log("Fin simulación. Gracias!")
+                      }    
+
+             }
+
 
             }
+                  
+
+            
+        }     
+            
+    
                 
             
                 
-            }     
-            
-}
+        
             
             
 
