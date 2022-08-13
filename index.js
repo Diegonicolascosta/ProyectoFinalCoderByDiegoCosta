@@ -1,3 +1,14 @@
+// elementos a obtener del DOM
+const containerValores = document.querySelector("#containerValores") 
+const containerImagen = document.querySelector("#fotoUno")
+
+// elementos creados
+const imagenDinero = document.createElement("img")
+imagenDinero.src = "./assets/dinero.png"                        // imprimir foto en un div ya designado
+containerImagen.append(imagenDinero)
+
+
+
 
 function crearPerfil(){                                                        // funcion  para crear y  normalizar el perfil del usuario
 
@@ -55,7 +66,7 @@ class PerfilCartera {
                 const tP = perfiles.some((el) => {                                              // validar repeticion de usuario
                     return  el.nombre == perfil.nombre})  
 
-                    if (tP == true){
+                    if (tP){
                         console.log("El usuario ya existe, intente nuevamente")
                       }                  
                                        
@@ -82,9 +93,10 @@ class PerfilCartera {
                 const busqueda = prompt("Indique el nombre de la persona a buscar")
                 const busqueda1 = busqueda.toUpperCase()  
                 const objetoBuscado = perfiles.find((el)=>{
-                    return el.nombre == busqueda1}) 
+                    return el.nombre == busqueda1})                       
 
                 console.log(objetoBuscado)
+                containerValores.innerHTML = objetoBuscado.nombre     // mostrar en el DOM el nombre del objeto buscado           
                 accion = prompt("Elija una opción:(CREAR/MOSTRAR/BUSCAR/SALIR)", "CREAR/MOSTRAR/BUSCAR/SALIR" )     // busqueda de usuario
                 accion1 = accion.toUpperCase()
                 if(accion1 == "SALIR"){
