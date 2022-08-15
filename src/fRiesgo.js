@@ -1,7 +1,7 @@
 
 // Funcion riesgo
 
-const gRiesgo = (capitalR, pRiesgo) => {                       
+ export const gRiesgo = (capitalR, pRiesgo) => {                       
     capitalR = +prompt("Capital a gestionar");
     pRiesgo = +prompt("porcentaje del 1 al 3%");   
     let resultado = 0;   

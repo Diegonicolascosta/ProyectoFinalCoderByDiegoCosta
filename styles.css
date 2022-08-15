@@ -101,17 +101,29 @@ nav ul li {
 }
   /* Tabla central y activos */
 
-.valores {    
+.valores { 
+    display: flex;
+    flex-direction: column;             
     border: 1px;
     border-style: solid; 
     border-left-style: none;
     border-top-style: none;
-    height: 250px;
-    
+    height: 250px;   
       
     
   }
-  .containerFotos {
+  .formDiv {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+  }
+  
+  .containerFotos { 
+    display: flex;   
+    flex-direction: column;
     border: 1px;
     border-bottom-style: solid;
     height: 200px;

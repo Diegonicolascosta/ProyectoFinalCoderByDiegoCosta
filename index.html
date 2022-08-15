@@ -17,37 +17,48 @@
     </header>       
     
 
-    <nav>        
+    <!-- <nav>        
         <div class="containerNav">
             <div class="menu">
         <ul  class = lista>           
             <li><button onclick="iCompuesto()">Calcular IC</button></li>         
             <li><button onclick="gRiesgo()">Riesgo</button></li>    
-            <li><button onclick="crearPerfil()">Crear Perfil</button></li>            
+            <li><button onclick="crearPerfil()">Crear Perfil</button></li>             
         </ul>
-            </div>        
+            </div>  
         
-    </nav>
-
-
-
-        <div id= containerValores class = valores></div>
+    </nav> -->
+        
+        <div id= containerValores class = valores>
+            <div id = formDiv class = formDiv>
+                <form id="formPerfil">
+                    <input id="nombre"  placeholder="nombre">
+                    <input id="apellido" placeholder="apellido">
+                    <input id="tipoPerfil" placeholder="tipoPerfil ">
+                    <input id="monto" placeholder="monto">                
+                </form>        
+                <button class="input" id="buttonAccept">Aceptar</button> 
+            </div>   
+            <button id="bCreateForm">Crear Perfil</button>
+            <button id="bDeleteForm">Borrar Perfil</button>              
+            </div>
+            <div>               
+             
+        
 
         <div class =containerFotos>
             <div id="fotoUno"></div>
             <div id="fotoDos"></div>
             <div id="fototres"></div>
         </div>
-        
-
+       
         
 
         
 <footer class="pie de pagina">Proyect By Diego Costa</footer>
 
-<script src="./fRiesgo.js"></script> 
-<script src="./fIcompuesto.js"></script> 
-<script src="./index.js"></script>
+
+<script src="./src/index.js" type="module"></script>
 
 </body>
 

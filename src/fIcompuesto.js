@@ -1,6 +1,6 @@
 // Calculador de interes compuesto 
 
-const iCompuesto = (k, interes, periodo) =>{                 // funcion interes compuesto
+export const iCompuesto = (k, interes, periodo) =>{                 // funcion interes compuesto
     k = +prompt("Capital inicial");
     interes = +prompt("interes anual");
     periodo = +prompt("años");
