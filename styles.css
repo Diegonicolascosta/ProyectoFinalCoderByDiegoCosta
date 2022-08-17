@@ -115,9 +115,19 @@ nav ul li {
   .formDiv {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 200px;
     margin-top: 50px;
     margin-bottom: 50px;
+
+  }
+  .formPerfil {
+    display: flex;
+    flex-direction: column;
+    background-color: lightsalmon;
+    padding: 10px;
+  }
+  .form {
+    margin-top: 10px;
 
   }
   

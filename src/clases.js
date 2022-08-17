@@ -1,4 +1,5 @@
-export class PerfilCartera {
+
+export class PerfilCartera {    
     constructor() {
         this.nombre = "";
         this.apellido = "";
@@ -31,10 +32,10 @@ export class PerfilCartera {
             
         setValue(value,field){
             switch(field){
-                case "Nombre":
+                case "nombre":
                     this.nombre = value
                     break;
-                case "Apellido":
+                case "apellido":
                     this.apellido = value
                     break;
                 case "tipoPerfil":
@@ -50,10 +51,10 @@ export class PerfilCartera {
         getValue(field){
             let value = "";
             switch(field){
-                case "Nombre":
+                case "nombre":
                     value = this.nombre
                     break;
-                case "Apellido":
+                case "apellido":
                     value = this.apellido
                     break;
                 case "tipoPerfil":
