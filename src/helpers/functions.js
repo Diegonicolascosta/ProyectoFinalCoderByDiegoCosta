@@ -4,7 +4,7 @@ import { divResultados } from "../index.js"
 
 
 export function handleSubmitControl(event){                             // funcion boton aceptar
-    //console.log(perfil)    
+        
     const nuevoPerfil = {                                               // cargo mi nuevo objeto form
         nombre: perfil.nombre,       
         apellido: perfil.apellido, 
@@ -28,7 +28,7 @@ export function handleInputControl(event){                           // funcion 
     console.log(event.target.placeholder)
     event.preventDefault()
 
-    const id = event.target.placeholder
+    const id = event.target.id
     const value = event.target.value                                  //captando targets y adaptar variable de uso
 
 
@@ -67,14 +67,20 @@ export function handleInputControl(event){                           // funcion 
                                             
 }
 
-export function handleClear() {
+export function handleClear() {                     // funcion clear storage
+
+    perfiles.forEach((el) => {
+        perfiles.pop()        
+    });
+    
     divResultados.innerHTML=""
+
     localStorage.clear()
 
 } 
                 
                               
-export function handleShow(){
+export function handleShow(){                                   // funcion mostrar elementos
 
     perfiles.forEach((perfil)=>{
     
@@ -90,12 +96,12 @@ export function handleShow(){
     
                 <p>${perfil.monto}</p>
                 `
-   
+        
     
             divResultados.append(divPerfil)
     
         })
-    
+        console.log(perfil.tipoPerfil)
     }
              
 
