@@ -12,8 +12,7 @@ export function handleSubmitControl(event){                             // funci
        
        }       
        perfiles.push(nuevoPerfil)   
-       localStorage.setItem("perfiles", JSON.stringify(perfiles))       // guardo mi array en localstorage
-
+       localStorage.setItem("perfiles", JSON.stringify(perfiles))        
     childs.forEach((hijo) => {                                          // limpiar inputs
         hijo.value = ""        
         
