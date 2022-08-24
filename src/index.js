@@ -1,15 +1,14 @@
 // imports
-import {PerfilCartera} from "./clases.js"
-import {handleInputControl, handleSubmitControl} from "./functions.js"
+import {handleInputControl, handleSubmitControl} from "./helpers/functions.js"
+import {perfiles} from "./data/variables.js"
 
-
-// definicion de objetos
-export const perfil = new PerfilCartera()
-
+// seteo localstorage
+perfiles = localStorage.getItem("perfiles") ? localStorage.getItem("perfiles") : []
 
 // elementos a obtener del DOM 
-export const formDiv = document.getElementById("formPerfil")
+export const formPerfil = document.getElementById("formPerfil")
 export const buttonAccept = document.getElementById("buttonAccept")
+export const cleanForm = document.querySelector(".form")
 
 // eventos
 formDiv.addEventListener("input", handleInputControl)
