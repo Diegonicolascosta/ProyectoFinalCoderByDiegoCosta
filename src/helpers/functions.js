@@ -1,5 +1,6 @@
 import { childs, perfil } from "../data/variables.js" 
 import { perfiles } from "../data/variables.js"
+import { divResultados } from "../index.js"
 
 
 export function handleSubmitControl(event){                             // funcion boton aceptar
@@ -66,10 +67,37 @@ export function handleInputControl(event){                           // funcion 
                                             
 }
 
-         
+export function handleClear() {
+    divResultados.innerHTML=""
+    localStorage.clear()
+
+} 
                 
                               
-                
+export function handleShow(){
+
+    perfiles.forEach((perfil)=>{
+    
+        const divPerfil = document.createElement("div")
+    
+            divPerfil.innerHTML = `
+    
+                <p>${perfil.nombre}</p>
+    
+                <p>${perfil.apellido}</p>
+    
+                <p>${perfil.tipoPerfil}</p>
+    
+                <p>${perfil.monto}</p>
+                `
+   
+    
+            divResultados.append(divPerfil)
+    
+        })
+    
+    }
+             
 
                     
                                        
