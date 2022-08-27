@@ -2,10 +2,10 @@
 
 export  class Form {                                               // clase manager de formulario
     constructor (nombre, apellido, tipoPerfil, monto) {
-        this.nombre = nombre
-        this.apellido = apellido
-        this.tipoPerfil = tipoPerfil
-        this.cantidad = monto
+        this.nombre = nombre ? nombre : "obligatorio"
+        this.apellido = apellido ? apellido : "obligatorio"
+        this.tipoPerfil = tipoPerfil ? tipoPerfil : "obligatorio"
+        this.cantidad = monto ? monto : "obligatorio"
 
     }  
         

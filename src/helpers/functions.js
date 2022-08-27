@@ -5,31 +5,22 @@ import { divResultados } from "../index.js"
 
 export function handleSubmitControl(event){                             // funcion boton aceptar
         
-    const nuevoPerfil = {                                               // cargo mi nuevo objeto form
-        nombre: perfil.nombre,       
-        apellido: perfil.apellido, 
-        tipoPerfil: perfil.tipoPerfil, 
-        monto: perfil.monto,
-       
-       }       
-       perfiles.push(nuevoPerfil)   
-       localStorage.setItem("perfiles", JSON.stringify(perfiles))        
-    childs.forEach((hijo) => {                                          // limpiar inputs
+    const nuevoPerfil = {...perfil}                                            // cargo mi nuevo objeto form
+        perfiles.push(nuevoPerfil)   
+        localStorage.setItem("perfiles", JSON.stringify(perfiles))        
+        childs.forEach((hijo) => {                                          // limpiar inputs
         hijo.value = ""        
         
-    })
+    })    
     
     
-    
-    console.log(perfiles)
 } 
 
 export function handleInputControl(event){                           // funcion manejador de inputs fomulario
     console.log(event.target.placeholder)
     event.preventDefault()
 
-    const id = event.target.id
-    const value = event.target.value                                  //captando targets y adaptar variable de uso
+    const {id, value} = event.target                                  //captando targets y adaptar variable de uso
 
 
     switch (id) {                                                     // evaluando los datos de los inputs del form
@@ -101,7 +92,7 @@ export function handleShow(){                                   // funcion mostr
             divResultados.append(divPerfil)
     
         })
-        console.log(perfil.tipoPerfil)
+        
     }
              
 
