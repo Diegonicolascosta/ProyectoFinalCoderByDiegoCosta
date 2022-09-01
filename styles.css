@@ -116,7 +116,7 @@ nav ul li {
     display: flex;
     flex-direction: column;
     width: 200px;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
 
   }
@@ -139,6 +139,9 @@ nav ul li {
     height: 200px;
     
   }
+.ponele{
+  border:2px;
+}
 
   footer {
     margin-top: 10px;

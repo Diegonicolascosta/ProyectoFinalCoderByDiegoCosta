@@ -8,11 +8,21 @@ export function handleSubmitControl(event){                             // funci
     const nuevoPerfil = {...perfil}                                            // cargo mi nuevo objeto form
         perfiles.push(nuevoPerfil)   
         localStorage.setItem("perfiles", JSON.stringify(perfiles))        
-        childs.forEach((hijo) => {                                          // limpiar inputs
-        hijo.value = ""        
+        childs.forEach((hijo) => {                                        // limpiar inputs
+        hijo.value = ""         
         
     })    
     
+    Toastify({
+
+        text: "Aceptado",            
+        duration: 2000,
+        newWindow: true,
+        close: true,
+        gravity: "bottom", 
+        position: "left", 
+        
+        }).showToast();     
     
 } 
 
@@ -68,24 +78,36 @@ export function handleClear() {                     // funcion clear storage
 
     localStorage.clear()
 
+    Toastify({
+
+        text: "Borrado",            
+        duration: 2000,
+        newWindow: true,
+        close: true,
+        gravity: "bottom", 
+        position: "left", 
+        
+        }).showToast();     
+    
+
 } 
                 
                               
-export function handleShow(){                                   // funcion mostrar elementos
+export function handleShow(){                                    // funcion mostrar elementos
 
     perfiles.forEach((perfil)=>{
     
         const divPerfil = document.createElement("div")
     
+          
             divPerfil.innerHTML = `
-    
-                <p>${perfil.nombre}</p>
-    
-                <p>${perfil.apellido}</p>
-    
-                <p>${perfil.tipoPerfil}</p>
-    
-                <p>${perfil.monto}</p>
+            <tr>
+            <td>${perfil.nombre}</td>
+            <td>${perfil.apellido}</td>
+            <td>${perfil.tipoPerfil}</td>       
+            <td>${perfil.monto}</td>  
+            </tr> 
+               
                 `
         
     
